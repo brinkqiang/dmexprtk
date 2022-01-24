@@ -4,8 +4,8 @@
 
 int main()
 {
-    double x = 0.618;
-    double y = 0;
+    double x = 1.618;
+    double y = 2.618;
 
     exprtk::symbol_table<double> symbol_table;
     symbol_table.add_constants();
@@ -16,12 +16,12 @@ int main()
 
     exprtk::expression<double> expression;
     expression.register_symbol_table(symbol_table);
-    std::string strExp = "if(x > y)";
+    std::string strExp = "if((x > y), x+1, y+2)";
     if (!parser.compile(strExp, expression))
     {
         fmt::print("Parser Error: {}\tExpression: {}\n", parser.error(), strExp);
         return -1;
     }
-
+    fmt::print("Parser Result: {}\tExpression: {}\n", expression.value(), strExp);
     return 0;
 }
