@@ -30,7 +30,7 @@
 
 int main()
 {
-   double x = 0;
+   double x = 0.618;
    double y = 0;
 
    exprtk::symbol_table<double> symbol_table;
@@ -42,9 +42,11 @@ int main()
 
    exprtk::expression<double> expression;
    expression.register_symbol_table(symbol_table);
-
-   if (!parser.compile("if(x > y)", expression))
+   std::string strExp = "if(x > y)";
+   if (!parser.compile(strExp, expression))
    {
+      printf("Parser Error: %s\tExpression: %s\n",
+         parser.error().c_str(), strExp));
       return -1;
    }
 
