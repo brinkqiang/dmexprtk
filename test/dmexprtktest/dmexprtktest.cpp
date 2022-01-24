@@ -16,7 +16,7 @@ int main()
 
     exprtk::expression<double> expression;
     expression.register_symbol_table(symbol_table);
-    std::string strExp = "if((x > y), x+1, y+2)";
+    std::string strExp = "if((x > y), x^2, y^2)";
     if (!parser.compile(strExp, expression))
     {
         fmt::print("Parser Error: {}\tExpression: {}\n", parser.error(), strExp);
