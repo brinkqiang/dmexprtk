@@ -14,6 +14,5 @@ dmexprtk
 ```cpp
 ```
 ## Contacts
-[![Join the chat](https://badges.gitter.im/brinkqiang/dmexprtk/Lobby.svg)](https://gitter.im/brinkqiang/dmexprtk)
 
 ## Thanks
