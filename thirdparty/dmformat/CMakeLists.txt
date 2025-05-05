@@ -8,4 +8,6 @@ ModuleSetCompileOptions()
 
 ADD_DEFINITIONS(-DUSE_DMFORMAT)
 
-ExeImport("test" "")
+if(PROJECT_IS_TOP_LEVEL)
+    ExeImport("test" "")
+endif()
